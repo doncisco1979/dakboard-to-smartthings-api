@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-DakboardToSmartthingsApiApplication<dakboard-to-smartthings-api>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.FrankieRodriguez.dakboardtosmartthingsapi.DakboardToSmartthingsApiApplication",
+            "projectName": "dakboard-to-smartthings-api",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

@@ -14,10 +14,11 @@ Description=Dakboard API Service
 After=network.target
 
 [Service]
-ExecStart=java -Xmx1024M -jar dakboard-api-0.1.0.jar
+Environment="DISPLAY=:0.0"
+ExecStart=java -Xmx1024M -jar dakboard-api-0.1.0.jar  
 WorkingDirectory=/opt/dakboard-api
-StandardOut=inherit
-StandardError=inherit
+StandardOut=/opt/dakboard-api/service.log
+StandardError=/opt/dakboard-api/service.log
 Restart=always
 User=pi
 
@@ -80,6 +81,8 @@ Modify file to add the following line
 ```aidl
 display_hdmi_rotate=1
 ```
+New Way to rotate screen
+DISPLAY=:0 xrandr --output HDMI-1 --rotate left
 If I want to use VNC, here are the instructions.
 
 https://www.raspberrypi.org/documentation/remote-access/vnc/#:~:text=VNC%20Connect%20from%20RealVNC%20is,Pi%20should%20you%20want%20to.

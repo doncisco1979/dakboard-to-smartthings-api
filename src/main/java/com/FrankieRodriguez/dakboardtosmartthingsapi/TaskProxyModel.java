@@ -1,8 +1,7 @@
 package com.FrankieRodriguez.dakboardtosmartthingsapi;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSetter;
-import com.sun.org.apache.xpath.internal.operations.Bool;
+
 
 import java.sql.Timestamp;
 import java.util.Date;

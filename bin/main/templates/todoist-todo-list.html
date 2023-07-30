@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+        ul{
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .baseclass{
+            font-family: "Roboto", sans-serif;
+            text-shadow: 1px 1px 0px rgba(0,0,0,.3)
+        }
+        .complete{
+            text-decoration: line-through;
+        }
+        .indent{
+            padding: 0px 0px 0px 5px;
+        }
+        .checkbox::before{
+            font-family: FontAwesome;
+            display: inline-block;
+            letter-spacing: 10px;
+            content: "\f096";
+        }
+        .checked::before{
+            content: "\f046";
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <ul class="baseclass">
+        <li
+                th:each="task : ${tasks}"
+                th:classappend="${
+             (task.completed ? 'complete' : 'incomplete') +
+             (task.indent > 1 ? ' indent' : '')
+        }">
+
+            <span
+                    th:text=${task.content}
+                    th:classappend="${
+                        ((#strings.endsWith(task.content,':')) ? '' : 'checkbox') +
+                        (task.completed ? ' checked' : '')
+                    }"
+            >Content</span>
+        </li>
+    </ul>
+</body>
+</html>

@@ -1,6 +1,6 @@
 buildscript {
 	ext {
-		springBootVersion = '2.0.5.RELEASE'
+		springBootVersion = '2.7.13'
 	}
 	repositories {
 		mavenCentral()
@@ -17,7 +17,10 @@ apply plugin: 'io.spring.dependency-management'
 
 group = 'com.FrankieRodriguez'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = 1.8
+java {
+	sourceCompatibility = 1.17
+}
+
 
 repositories {
 	mavenCentral()
@@ -25,14 +28,18 @@ repositories {
 
 
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter-web')
-	compile("org.springframework.boot:spring-boot-starter-thymeleaf")
-	compile("com.fasterxml.jackson.core:jackson-databind")
-	compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
-	testCompile('org.springframework.boot:spring-boot-starter-test')
+	implementation('org.springframework.boot:spring-boot-starter-web')
+	implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
+	implementation("com.fasterxml.jackson.core:jackson-databind")
+	implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
+	testImplementation('org.springframework.boot:spring-boot-starter-test')
 }
-
-bootJar {
-    baseName = 'dakboard-api'
-    version =  '0.1.0'
+tasks.named("bootJar") {
+	mainClass = 'com.FrankieRodriguez.dakboardtosmartthingsapi.DakboardToSmartthingsApiApplication'
+	baseName = 'dakboard-api'
+	version='0.1.0'
 }
+// bootJar {
+//     baseName = 'dakboard-api'
+//     version =  '0.1.0'
+// }
