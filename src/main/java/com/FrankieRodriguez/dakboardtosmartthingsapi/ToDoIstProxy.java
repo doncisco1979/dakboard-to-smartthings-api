@@ -13,7 +13,7 @@ public class ToDoIstProxy
 {
     private static RestTemplate restTemplate;
     private static final String trivaHostURL = "https://beta.todoist.com/API/v8";
-    private static final String bearerToken = "8d6399ecb30154aec6ede72099b6e571dc26a416";
+    private static final String bearerToken =  "notanapikey";
 
     public ToDoIstProxy(){
         restTemplate = new RestTemplate();
